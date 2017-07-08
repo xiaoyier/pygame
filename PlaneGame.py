@@ -214,9 +214,10 @@ def main():
             elif event.type == QUIT:
                 running = False
             elif event.type == ADDENEMY:
-                enemy = Enemy()
-                everything.add(enemy)
-                enemys.add(enemy)
+                if game_status == 'BEGIN':
+                    enemy = Enemy()
+                    everything.add(enemy)
+                    enemys.add(enemy)
 
 
         window.blit(background,(0,0))
